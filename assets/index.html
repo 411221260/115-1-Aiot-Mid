@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UNO Q 智慧天氣預報</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="page-container">
+
+        <header class="header">
+            <div class="header-icon">🌤️</div>
+
+            <div>
+                <h1>智慧天氣預報系統</h1>
+                <p>Arduino UNO Q Weather Station</p>
+            </div>
+        </header>
+
+
+        <!-- 城市搜尋區域 -->
+
+        <section class="search-section">
+
+            <h2>查詢城市天氣</h2>
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="cityInput"
+                    list="cityList"
+                    placeholder="請輸入城市，例如：台北市"
+                    value="台北市"
+                >
+
+                
+                <datalist id="city-list">
+                  <option value="台北市">
+                  <option value="新北市">
+                  <option value="桃園市">
+                  <option value="基隆市">
+                  <option value="新竹市">
+                  <option value="新竹縣">
+                  <option value="苗栗縣">
+                  <option value="台中市">
+                  <option value="彰化縣">
+                  <option value="南投縣">
+                  <option value="雲林縣">
+                  <option value="嘉義市">
+                  <option value="嘉義縣">
+                  <option value="台南市">
+                  <option value="高雄市">
+                  <option value="屏東縣">
+                  <option value="宜蘭縣">
+                  <option value="花蓮縣">
+                  <option value="台東縣">
+                  <option value="澎湖縣">
+                  <option value="金門縣">
+                  <option value="連江縣">
+                </datalist>
+
+                </datalist>
+
+                <button id="searchButton">
+                    查詢天氣
+                </button>
+
+            </div>
+
+            <p class="search-hint">
+                請輸入台灣縣市，例如：台中市、花蓮縣
+            </p>
+
+            <div id="message" class="message">
+                等待查詢
+            </div>
+
+        </section>
+
+
+        <!-- 目前天氣 -->
+
+        <section id="currentSection" class="weather-section hidden">
+
+            <div class="section-title">
+                <h2>目前天氣</h2>
+                <span id="weatherTime"></span>
+            </div>
+
+            <div class="current-card">
+
+                <div class="current-main">
+
+                    <div>
+                        <p id="locationName" class="location-name">
+                            台北市
+                        </p>
+
+                        <p id="countryName" class="country-name">
+                            Taiwan
+                        </p>
+                    </div>
+
+                    <div class="temperature-area">
+
+                        <span id="weatherIcon" class="weather-icon">
+                            ☁️
+                        </span>
+
+                        <span id="temperature" class="temperature">
+                            --°
+                        </span>
+
+                    </div>
+
+                    <p id="weatherDescription" class="weather-description">
+                        --
+                    </p>
+
+                </div>
+
+
+                <div class="weather-details">
+
+                    <div class="detail-item">
+                        <span>🌡️</span>
+                        <p>體感溫度</p>
+                        <strong id="feelsLike">-- °C</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>💧</span>
+                        <p>相對濕度</p>
+                        <strong id="humidity">-- %</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>💨</span>
+                        <p>風速</p>
+                        <strong id="windSpeed">-- km/h</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- 七日預報 -->
+
+        <section id="forecastSection" class="forecast-section hidden">
+
+            <div class="section-title">
+                <h2>未來七天天氣</h2>
+            </div>
+
+            <div id="forecastList" class="forecast-list">
+
+            </div>
+
+        </section>
+
+
+        <footer>
+            <p>Powered by Arduino UNO Q & Open-Meteo</p>
+            <p>智慧天氣預報系統</p>
+        </footer>
+
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

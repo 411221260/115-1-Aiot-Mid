@@ -1,0 +1,6 @@
+name: aiot mid
+description: ""
+ports: []
+bricks:
+- arduino:web_ui: {}
+icon: ☀️
